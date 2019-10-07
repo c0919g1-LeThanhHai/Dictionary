@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<button onclick="search();">Tìm</button>
+<p id="result"></p>
+<script>
+    let us = ["hello","goodbye","learn","cup","class","friend","teacher","board"];
+    let vn = ["xin chào","tạm biệt","học","cốc","lớp","bạn","giáo viên","bảng"];
+    let input = document.getElementById("search");
+    let result = document.getElementById("result");
+    function search() {
+        for(let item in us) {
+            if(us[item] == input.value.toLowerCase()) {
+                for(let item2 in vn) {
+                    if(item2 == item) {
+                        result.innerHTML = us[item] + " => " + vn[item2];
+                        break;
+                    }
+                }
+                break;
+            } else {
+                result.innerHTML = "Không tìm thấy kết quả";
+            }
+        }
+    }
+</script>
+</body>
+</html>
